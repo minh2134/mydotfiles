@@ -1,0 +1,8 @@
+#!/bin/bash
+clear
+while true; do
+	curl -s http://wttr.in 2> /dev/null | head -n7
+	#echo -en "\r"
+	sleep 3600
+	clear
+done
