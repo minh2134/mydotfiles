@@ -18,3 +18,9 @@ if [ ! -d "$TAR/compton" ]; then
 	mkdir $TAR/compton
 fi
 ln -sf $SOURCE/compton/compton.conf $TAR/compton/compton.conf
+
+#i3
+if [ ! -d "$TAR/i3" ]; then
+	mkdir $TAR/i3
+fi
+ln -sf $SOURCE/i3/config $TAR/i3/config
