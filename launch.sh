@@ -11,5 +11,10 @@ TAR="$HOME/.config"
 if [ ! -d "$TAR/alacritty" ]; then
 	mkdir $TAR/alacritty
 fi
+ln -sf $SOURCE/alacritty/alacritty.yml $TAR/alacritty/alacritty.yml
 
-ln -sf $SOURCE/alacritty/alacritty.yml $TAR/alacritty/alacritty.yml 
+#compton
+if [ ! -d "$TAR/compton" ]; then
+	mkdir $TAR/compton
+fi
+ln -sf $SOURCE/compton/compton.conf $TAR/compton/compton.conf
