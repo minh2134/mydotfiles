@@ -1,8 +1,13 @@
 #!/bin/bash
+
 clear
 while true; do
 	curl -s http://wttr.in 2> /dev/null | head -n7
-	#echo -en "\r"
-	sleep 3600
+	echo -en "\r"
+	read -s -t 3600 -N 1 input
+    	if [[ $input = "q" ]] || [[ $input = "Q" ]]; then
+		clear
+		break
+	fi
 	clear
 done

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+DIR="$HOME/documents/note"
+echo "not ready yet"
