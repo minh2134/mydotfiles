@@ -24,3 +24,11 @@ if [ ! -d "$TAR/i3" ]; then
 	mkdir $TAR/i3
 fi
 ln -sf $SOURCE/i3/config $TAR/i3/config
+
+#mpd
+if [ ! -d "$TAR/mpd/playlists" ]; then
+	mkdir $TAR/mpd/playlists
+fi #creating playlists folder
+touch $TAR/mpd/database
+ln -sf $SOURCE/mpd/mpd.conf $TAR/mpd/mpd.conf
+
