@@ -208,7 +208,9 @@ bindsym $mod+p mode "Power"
 
 #shortcuts
 bindsym --release Print exec "maim -s | xclip -selection clipboard -t image/png"
+bindsym --release $mod+M exec $term -e ncmpcpp; workspace $ws10 #TODO create a layout for ncmpcpp
 
+#autostart some nice programs
 exec_always --no-startup-id feh --bg-scale ~/Images/Wallpapers/redpanda.jpg
 exec --no-startup-id compton -f
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -217,15 +219,11 @@ exec --no-startup-id nm-applet &
 exec --no-startup-id indicator-kdeconnect
 exec --no-startup-id enpass
 exec --no-startup-id xbindkeys
-exec --no-startup-id workspace $ws7; exec thunderbird
+exec --no-startup-id exec thunderbird
 #running redshift
 exec --no-startup-id redshift -l 39.95222222:-75.16361111111111
 #exec --no-startup-id google-musicmanager; #i3-msg '[class = "google-musicmanager"] kill'
-exec --no-startup-id mpd
 exec --no-startup-id workspace $ws10; exec --no-startup-id alacritty -e ncmpcpp
 
 #those things that need to close the window on startup
 exec --no-startup-id i3-msg 'workspace $ws8; exec enpass' ; sleep 2.25s; i3-msg '[class="Enpass"] kill; workspace $ws1'
-
-
-#Return to the main workspace
