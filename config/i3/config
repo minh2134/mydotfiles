@@ -208,7 +208,8 @@ bindsym $mod+p mode "Power"
 
 #shortcuts
 bindsym --release Print exec "maim -s | xclip -selection clipboard -t image/png"
-bindsym --release $mod+M exec $term -e ncmpcpp; workspace $ws10 #TODO create a layout for ncmpcpp
+bindsym --release $mod+M exec $term -e ncmpcpp; workspace $ws10 
+#TODO create a layout for ncmpcpp
 
 #autostart some nice programs
 exec_always --no-startup-id feh --bg-scale ~/Images/Wallpapers/redpanda.jpg
