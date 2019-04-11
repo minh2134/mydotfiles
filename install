@@ -32,3 +32,12 @@ fi #creating playlists folder
 touch $TAR/mpd/database
 ln -sf $SOURCE/mpd/mpd.conf $TAR/mpd/mpd.conf
 
+#polybar
+if [[ ! -d "$TAR/polybar" ]]; then
+	mkdir $TAR/polybar
+fi
+ln -sf $SOURCE/polybar/config $TAR/polybar/config
+ln -sf $SOURCE/polybar/launch.sh $TAR/polybar/launch.sh
+
+#xbindkeys
+ln -sf $SOURCE/xbindkeys/.xbindkeysrc $HOME/.xbindkeysrc
