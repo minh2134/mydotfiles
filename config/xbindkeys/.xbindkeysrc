@@ -58,6 +58,19 @@ keystate_numlock = enable
 
 "pactl set-sink-mute @DEFAULT_SINK@ toggle"
   XF86AudioMute
+
+#Controlling mpd
+"mpc toggle"
+  XF86AudioPlay
+
+"mpc stop"
+  XF86AudioStop
+
+"mpc prev"
+  XF86AudioPrev
+
+"mpc next"
+  XF86AudioNext
 ##################################
 # End of xbindkeys configuration #
 ##################################

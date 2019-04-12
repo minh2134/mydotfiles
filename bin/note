@@ -1,4 +1,23 @@
 #!/bin/bash
 
 DIR="$HOME/documents/note"
+
+#Declaring functions
+edit () {
+	vim $DIR/$1
+}
+add (){
+	cat $1 >> $DIR/$2
+}
+
+list (){
+	ls $DIR
+}
+
+view (){
+	cat $DIR/$1
+}
+
+
+#Main body
 echo "not ready yet"
