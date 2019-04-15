@@ -137,9 +137,8 @@ label-urgent-padding = 3
 
 label-focused = %name%
 label-focused-foreground = #ffffff
-label-focused-background = #3f3f3f
-label-focused-underline = #3E30F2
 label-focused-padding = 6
+label-focused-font-size = 30
 
  
 
