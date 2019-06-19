@@ -2,36 +2,61 @@
 
 DIR="$HOME/Documents/note"
 
-#Declaring functions
+# Declaring functions
 edit () {
 	$EDITOR $DIR/$1
 }
-add (){
-	echo $1 >> $DIR/$2
-	view $2
+add () {
+	for AR in "${@:2:$#}"; do
+		echo $AR >> $DIR/$1
+	done
+	view $1
 }
 
-remove(){
-	sed -i "${1}d" $DIR/$2
-	view $2
+remove() {
+	TEMP=""
+	for AR in "${@:2:$#}"; do
+		TEMP="$TEMP${AR}d;"
+	done
+	sed -i "$TEMP" $DIR/$1
+	view $1
 }
 
-list (){
+list () {
 	ls $DIR
 }
 
-view (){
+view () {
 	echo "=================NOTE BEGNNING==================="
 	cat $DIR/$1
 	echo "===================NOTE END======================"
 }
-helper(){
+
+helper() {
 	cat $DIR/helper.note
 }
-delete(){
-	rm -f $DIR/$1
+
+delete() {
+	echo "Are you sure you want to delete $1 (Y/n)"
+	read -s -t 3600 -N 1 input
+	echo $input
+	if [[ $input = "Y" || $input = 'y' ]]; then
+		rm -f $DIR/$1
+		echo "Deleted $1"
+	elif [[ $inut = "n" || $input = "N" ]]; then
+		echo "Exiting..."
+	else
+		echo "Invalid output"
+	fi
 }
-#Main body
+
+delete-items() {
+	for AR in $@; do
+		delete $AR
+	done
+}
+
+# Main body
 case $1 in
 	-e|--edit)
 		edit $2
@@ -43,24 +68,16 @@ case $1 in
 		view $2
 		;;
 	-d|--delete)
-		echo "Are you sure you want to delete $2 (Y/n)"
-		read -s -t 3600 -N 1 input
-		echo $input
-		if [[ $input = "Y" ]] || [[ $input = "y" ]]; then
-			delete $2
-			echo "Deleted $2"
-		elif [[ $input = "n" ||  $input = "N" ]]; then
-			echo "Exiting..."
-		fi
+		delete-items ${@:2:$#}
 		;;
 	-h|--help)
 		helper
 		;;
 	-a|--add-item)
-		add "$2" $3
+		add "${@:2:$#}"
 		;;
 	-r|remove-item)
-		remove $2 $3
+		remove "${@:2:$#}"
 		;;
 	*)
 		sl -alF
