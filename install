@@ -41,3 +41,6 @@ ln -sf $SOURCE/polybar/launch.sh $TAR/polybar/launch.sh
 
 #xbindkeys
 ln -sf $SOURCE/xbindkeys/.xbindkeysrc $HOME/.xbindkeysrc
+
+#neovim
+ln -sf $SOURCE/nvim/init.vim $TAR/nvim/init.vim
