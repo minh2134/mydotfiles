@@ -4,8 +4,18 @@
 
 #some interesting variables
 
-SOURCE="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/config"
+
+ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SOURCE="${ROOT}/config"
 TAR="$HOME/.config"
+
+# Install necessary packages
+sudo pacman -S --needed < $ROOT/archpackages.txt
+
+
+
+
+
 
 #alacritty
 if [ ! -d "$TAR/alacritty" ]; then
