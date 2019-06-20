@@ -10,8 +10,9 @@ SOURCE="${ROOT}/config"
 TAR="$HOME/.config"
 
 # Install necessary packages
-yay -S --needed < $ROOT/archpackages.txt
-
+yay -S --needed -< $ROOT/archpackages.txt
+yay -S sl
+cat $ROOT/archpackages.txt
 
 
 

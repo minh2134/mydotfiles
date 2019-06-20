@@ -25,7 +25,6 @@ discord
 dotnet-sdk
 e2fsprogs
 enpass-bin
-etcher
 evince
 fakeroot
 feh
