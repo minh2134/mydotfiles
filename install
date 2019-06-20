@@ -10,13 +10,23 @@ SOURCE="${ROOT}/config"
 TAR="$HOME/.config"
 
 # Install necessary packages
+## installing yay
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ..
+rm -rf yay
+
+## install from a list
 yay -S --needed -< $ROOT/archpackages.txt
 yay -S sl
 cat $ROOT/archpackages.txt
 
+## clear unneeded dependencies
+yay -Yc
 
-
-
+# bash
+ln -s $SOURCE/bash/.bashrc $HOME/.bashrc
 
 # alacritty
 if [ ! -d "$TAR/alacritty" ]; then
