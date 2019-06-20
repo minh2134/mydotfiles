@@ -5,8 +5,8 @@
 #some interesting variables
 
 
-ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-SOURCE="${ROOT}/config"
+REPO="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SOURCE="${REPO}/config"
 TAR="$HOME/.config"
 
 # Install necessary packages
@@ -18,9 +18,9 @@ cd ..
 rm -rf yay
 
 ## install from a list
-yay -S --needed -< $ROOT/archpackages.txt
+yay -S --needed -< $REPO/archpackages.txt
 yay -S sl
-cat $ROOT/archpackages.txt
+cat $REPO/archpackages.txt
 
 ## clear unneeded dependencies
 yay -Yc
@@ -71,3 +71,6 @@ ln -sf $SOURCE/xbindkeys/.xbindkeysrc $HOME/.xbindkeysrc
 
 # neovim
 ln -sf $SOURCE/nvim/init.vim $TAR/nvim/init.vim
+
+# Wallpapers
+ln -sf $REPO/Images/Wallpapers $HOME/Images/Wallpapers
