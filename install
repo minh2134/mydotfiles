@@ -17,40 +17,46 @@ yay -S --needed < $ROOT/archpackages.txt
 
 
 
-#alacritty
+# alacritty
 if [ ! -d "$TAR/alacritty" ]; then
 	mkdir $TAR/alacritty
 fi
 ln -sf $SOURCE/alacritty/alacritty.yml $TAR/alacritty/alacritty.yml
 
-#compton
+# compton
 if [ ! -d "$TAR/compton" ]; then
 	mkdir $TAR/compton
 fi
 ln -sf $SOURCE/compton/compton.conf $TAR/compton/compton.conf
 
-#i3
+# i3
 if [ ! -d "$TAR/i3" ]; then
 	mkdir $TAR/i3
 fi
 ln -sf $SOURCE/i3/config $TAR/i3/config
 
-#mpd
+# mpd
 if [ ! -d "$TAR/mpd/playlists" ]; then
 	mkdir $TAR/mpd/playlists
-fi #creating playlists folder
+fi # creating playlists folder
 touch $TAR/mpd/database
 ln -sf $SOURCE/mpd/mpd.conf $TAR/mpd/mpd.conf
 
-#polybar
+# ncmpcpp
+if [ ! -d "$HOME/.ncmpcpp" ]; then
+	mkdir $HOME/.ncmpcpp
+fi
+ln -sf $SOURCE/ncmpcpp/config $HOME/.ncmpcpp
+
+# polybar
 if [[ ! -d "$TAR/polybar" ]]; then
 	mkdir $TAR/polybar
 fi
 ln -sf $SOURCE/polybar/config $TAR/polybar/config
 ln -sf $SOURCE/polybar/launch.sh $TAR/polybar/launch.sh
 
-#xbindkeys
+# xbindkeys
 ln -sf $SOURCE/xbindkeys/.xbindkeysrc $HOME/.xbindkeysrc
 
-#neovim
+# neovim
 ln -sf $SOURCE/nvim/init.vim $TAR/nvim/init.vim
