@@ -10,7 +10,7 @@ SOURCE="${ROOT}/config"
 TAR="$HOME/.config"
 
 # Install necessary packages
-sudo pacman -S --needed < $ROOT/archpackages.txt
+yay -S --needed < $ROOT/archpackages.txt
 
 
 
