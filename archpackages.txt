@@ -59,7 +59,6 @@ jfsutils
 jsoncpp
 latex-mk
 less
-lib32-nvidia-utils
 lib32-vulkan-icd-loader
 libreoffice-fresh
 libtool
@@ -95,8 +94,6 @@ netctl
 network-manager-applet
 networkmanager
 nm-connection-editor
-nvidia
-optimus-manager
 otf-font-awesome-4
 otf-ipafont
 pacman
