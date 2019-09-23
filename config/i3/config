@@ -220,7 +220,8 @@ exec --no-startup-id nm-applet &
 exec --no-startup-id indicator-kdeconnect
 exec --no-startup-id enpass
 exec --no-startup-id xbindkeys
-exec --no-startup-id exec thunderbird
+exec --no-startup-id thunderbird
+exec --no-startup-id ibus-daemon
 #running redshift
 exec --no-startup-id redshift -l 39.95222222:-75.16361111111111
 #exec --no-startup-id google-musicmanager; #i3-msg '[class = "google-musicmanager"] kill'
